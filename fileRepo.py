@@ -10,7 +10,7 @@ class FileRepo():
          nom = ""
          nom = filename + ".csv"
          f = open(nom,"w")
-         f.write(string)
+         f.write(string) 
 
 
     
