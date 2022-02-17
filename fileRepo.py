@@ -7,7 +7,9 @@ class FileRepo():
         return string
     
     def exportDataToCsv(self,filename,string):
-         f = open("fichier.csv","w")
+         nom = ""
+         nom = filename + ".csv"
+         f = open(nom,"w")
          f.write(string)
 
 
