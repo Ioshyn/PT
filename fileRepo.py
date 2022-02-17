@@ -6,11 +6,17 @@ class FileRepo():
             string = string  + str(Ltimes[i]) + delim + str(Lpoints[i].getX()) + delim + str(Lpoints[i].getY())+"\n"
         return string
     
-    def exportDataToCsv(self,filename,string,Ltimes,Lpoints,delim):
+    def exportDataToCsv(self,filename,Ltimes,Lpoints,delim):
          nom = ""
          nom = filename + ".csv"
-         f = open(nom,"w")
-         f.write(exportDataString(self,Ltimes,Lpoints,delim))
-
+         try:
+             f = open(nom,"w")
+             try:
+                 f.write(self.exportDataString(Ltimes,Lpoints,delim))
+             except :
+                 print("ne peut pas écrire dans le fichier")
+            
+         except :
+            print("ne peut pas ouvrir/créer le fichier")
 
     
