@@ -1,6 +1,6 @@
 import unittest
 import filecmp
-from fileRepo import FileRepo
+from FileRepo import FileRepo
 from points import Point
 
 class TestFileRepo(unittest.TestCase):
@@ -16,8 +16,25 @@ class TestFileRepo(unittest.TestCase):
         pass
     
     def test_isString(self):
-        self.assertTrue(self.chaine,"zfezrezre")
-
-
+        self.assertTrue(type(self.chaine) is str)
+    
+    def test_sameLength(self):
+        self.assertTrue(len(self.listePoints) is len(self.listeTemps))
+    
+    def test_convert_str(self):
+        v = FileRepo()
+        chaine1 = v.exportDataString(self.listeTemps,self.listePoints,",")
+        self.assertTrue(chaine1 == self.chaine)
+    
+    def test_convert_csv(self):
+        v = FileRepo()
+        v.exportDataToCsv("test1",self.listeTemps,self.listePoints,",")
+        result = filecmp.cmp("test.csv", "test1.csv")
+        self.assertTrue(result)
+    
+    
+        
+        
+        
 if __name__ == '__main__':
     unittest.main(verbosity=2)
