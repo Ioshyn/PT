@@ -9,6 +9,14 @@ class Point():
     
     def getY(self):
         return self.__y
+      
+    def setX(self,X):
+        self.__x = X
+    
+    def setY(self,Y):
+        self.__y = Y
+    
+
 
 
         
