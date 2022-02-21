@@ -18,5 +18,4 @@ class FileRepo():
             
          except :
             print("ne peut pas ouvrir/créer le fichier")
-
-    
+         f.close()
