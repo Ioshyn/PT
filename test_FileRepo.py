@@ -31,7 +31,7 @@ class TestFileRepo(unittest.TestCase):
     def test_convert_csv(self):
         v = FileRepo()
         v.exportDataToCsv("test1",self.listeTemps,self.listePoints,",")
-        result = filecmp.cmp("test.csv", "test1.csv")
+        result = filecmp.cmp("src\models\test.csv", "src\models\test1.csv")
         self.assertTrue(result)
     
     
