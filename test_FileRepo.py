@@ -1,7 +1,9 @@
 import unittest
 import filecmp
-from FileRepo import FileRepo
-from points import Point
+import sys
+sys.path.append("../")
+from src.models.FileRepo import FileRepo
+from src.models.points import Point
 
 class TestFileRepo(unittest.TestCase):
     def setUp(self) -> None:
